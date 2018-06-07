@@ -1,9 +1,12 @@
 # ORC World Map
-You want to put your data on a searchable, filterable map. This is a free, open source template to help you do it.
 
-[![Searchable Map Template screenshot](https://raw.github.com/derekeder/FusionTable-Map-Template/master/images/searchable-map-template-v1.2.jpg)](http://derekeder.github.io/FusionTable-Map-Template/)
+The Organic Rankine Cycle (ORC) technology is a way to convert heat into electricity. Its main applications are distributed electricity generation from renewable heat sources (geothermal, biomass, solar) and industrial energy efficiency (heat recovery from industrial processes). The ORC technology is not very well-known and the number of power plants that are based on that technology is underestimated. Combining all the known references onto one map could increase public awareness and motivate new motions and incentives favorable to ORC.
 
-[See the working demo &raquo;](http://derekeder.github.io/FusionTable-Map-Template/)
+For this reason, an exhaustive database was built through a combination of web scrapping from manufacturers' websites, review of press articles and scientific papers. When possible, multiple sources have been used in order to cross-reference the information.
+
+[You can visit the full site here](http://www.orc-world-map.org)
+
+[![ORC World Map screenshot](https://raw.githubusercontent.com/tartieret/ORC-World-Map/master/images/screenshot.PNG)](http://www.orc-world-map.org)
 
 ## Dependencies
 
