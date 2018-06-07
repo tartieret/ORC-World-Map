@@ -1,6 +1,8 @@
 .navbar {
-  background-color: #FFF;
+  background-color: #ffffff;
   min-height:50px;
+  position: fixed;
+  width: 100%;
 }
 
 .navbar-nav > li > a, .navbar-brand {
@@ -13,6 +15,12 @@
 
 a { color: #156711; }
 a:hover { color: #5AAC56; }
+
+#page-content {
+  position: relative;
+  width: 100%;
+  top: 50px;
+}
 
 #map_canvas img {
   max-width: none;
@@ -44,6 +52,8 @@ p { text-align: justify;
   height: 60px;
   background-color: #f5f5f5;
   border-top: 1px solid #eee;
+  position: relative;
+  margin-top: 60px;
 }
 
 .footer p { text-align: center;
@@ -91,6 +101,8 @@ canvas {-ms-touch-action: double-tap-zoom;}
 
 .navbar { margin-bottom:0;
 }
+
+
 
 .search-panel
 {
