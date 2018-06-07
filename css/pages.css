@@ -1,0 +1,23 @@
+h1 { color: #158711; font-size: 26px; font-weight: normal; margin-bottom: 0.8em; margin-top: 0.8em; width: 65.5%; }
+h1 span, h2 span, h3 span, h4 span { color: #58595B; font-size: 16px; font-weight: normal; margin-left: 0.5em; }
+h2 { color: #034500; font-size: 18px; line-height: 1.3; margin-bottom: 7px; }
+h2, h3, h4, h5, h6, strong { font-weight: bold; }
+h3 { color: #4b58a6; margin-top: 0.25em; }
+h4 { margin: 0.25em 0 0 0; padding: 0; }
+hr { background: #ddd; border: 0; clear: both; color: #ddd; height: 5px; margin: .75em 0; }
+
+.media-share {
+	float: right;
+}
+
+.data-img {
+	text-align: center;
+}
+
+.data-img > img { 
+	max-width : 850px;
+	width:100%;
+	padding-top : 15px;
+	padding-bottom: 15px;
+
+}
