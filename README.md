@@ -4,7 +4,7 @@ The Organic Rankine Cycle (ORC) technology is a way to convert heat into electri
 
 For this reason, an exhaustive database was built through a combination of web scrapping from manufacturers' websites, review of press articles and scientific papers. When possible, multiple sources have been used in order to cross-reference the information.
 
-[You can visit the full site here](http://www.orc-world-map.org)
+[You can visit the full site here](http://orc-world-map.org/)
 
 [![ORC World Map screenshot](https://raw.githubusercontent.com/tartieret/ORC-World-Map/master/images/screenshot.PNG)](http://www.orc-world-map.org)
 
@@ -26,7 +26,7 @@ Notice a bug or want to add a feature? [Open an issue](https://github.com/tartie
 
 ## Contributors 
 
-* [Thomas Tartiere](http://derekeder.com) - primary contributor
+* [Thomas Tartiere](https://www.linkedin.com/in/thomastartiere/) - primary contributor
 
 ## Copyright and attribution
 
