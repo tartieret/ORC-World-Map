@@ -75,23 +75,6 @@
         $("#result_box").hide();
 
         //-----custom initializers-----
-        /*
-        $("#cap-slider").slider({
-            orientation: "horizontal",
-            range: true,
-            min: 50,
-            max: 330000,
-            values: [50, 330000],
-            step: 50,
-            slide: function (event, ui) {
-                $("#cap-selected-start").html(ui.values[0]);
-                $("#cap-selected-end").html(ui.values[1]);
-            },
-            stop: function(event, ui) {
-              self.doSearch();
-            }
-        });
-*/
 
         $("#cap-slider").slider({
             range: true,
@@ -108,19 +91,60 @@
             }
         });
 
-        function commafy(val) {
-            /* Total range 50 - 330,000 */
-            /* 70% from 10,000 to 200,000, what have left (2,325,000) share left (25,000) and right (2,300,000) */
-            /* So, final dividing */
-            var toPresent = 0;
-            if (val <= 40) {
-                toPresent = 10+(val / 40) * 9990;
-            } else if (val <= 90) {
-                toPresent = 10000 + (val - 40) / 50 * 175000;
-            } else {
-                toPresent = 185000 + (val - 90) / 10 * 145000;
-            };
-            return String(toPresent.toFixed(0));
+        function commafy(position) {
+            /* Total range 0.8 - 96,000
+            Use logarithmic scale for the slider
+             */
+
+            // slider min and max position
+            var minp = 0;
+            var maxp = 100;
+
+            // the result should be between 50 and 330,000
+            var minv = Math.log(0.8);
+            var maxv = Math.log(96000);
+
+            // adjustment factor
+            var scale = (maxv-minv)/(maxp-minp);
+
+            var value = Math.exp(minv+scale*(position-minp));
+
+            return String(value.toFixed(0));
+        }
+
+        $("#year-slider").slider({
+            range: true,
+            min: 0,
+            max: 100,
+            step: 1,
+            values: [0, 100],
+            slide: function (event, ui) {
+                $("#year-selected-start").html(year_commafy(ui.values[0]));
+                $("#year-selected-end").html(year_commafy(ui.values[1]));
+            },
+            stop: function(event, ui) {
+                self.doSearch();
+            }
+        });
+
+        function year_commafy(position) {
+            /* Total range 1975-current year
+             */
+
+            // slider min and max position
+            var minp = 0;
+            var maxp = 100;
+
+            // the result should be between 1975 and 2018
+            var minv = 1975;
+            var maxv = (new Date()).getFullYear(); // current year
+
+            // adjustment factor
+            var scale = (maxv-minv)/(maxp-minp);
+
+            var value = minv+scale*(position-minp);
+
+            return String(value.toFixed(0));
         }
 
         //-----end of custom initializers-----
@@ -225,9 +249,32 @@
         
         self.whereClause += " AND " + type_column + " IN ('" + tempWhereClause.join("','") + "')";
 
-
+        // search by installed capacity
         self.whereClause += " AND 'total_power' >= '" + $("#cap-selected-start").html() + "'";
         self.whereClause += " AND 'total_power' <= '" + $("#cap-selected-end").html() + "'";
+
+        // search by year
+        var startYear = parseInt($("#year-selected-start").html());
+        var endYear = parseInt($("#year-selected-end").html());
+
+        var years = [];
+        var nb_years = endYear-startYear+1;
+        for(var i=0;i<nb_years; i++){
+            years.push(startYear+i);
+        }
+        if ( $("#cbConstruction").is(':checked')) {
+            years.push(3000);
+        }
+        self.whereClause += " AND 'Year' IN ('" + years.join("','") + "')";
+
+        //self.whereClause += " AND 'Year' >= '" + $("#year-selected-start").html() + "'";
+        //self.whereClause += " AND 'Year' <= '" + $("#year-selected-end").html() + "'";
+
+        // if ( $("#cbConstruction").is(':checked')) {
+        //     self.whereClause += " OR 'Year' >= '3000'";
+        // }
+
+        console.log(self.whereClause);
 
         //-----end of custom filters-----
 
