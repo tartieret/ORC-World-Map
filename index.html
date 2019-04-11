@@ -68,12 +68,12 @@
         <div class='row'>
 
         <div class='col-xs-4' style='padding: 0px; width:100%; height:80%;'>
-        
+
         <div class="search-panel">
           <div class='well'>
             <p>This is an overview of all <a href="https://en.wikipedia.org/wiki/Organic_Rankine_cycle">Organic Rankine Cycle</a> units installed in the world. </p>
             <p><a href="about.html">Click for more information</a> or <a href="analysis.html">read the analysis</a>. Last update : <strong>09/20/2018</strong></p>
-          
+
             <h4>Application</h4>
              <div class='row'>
                <ul class='inputs-list unstyled'>
@@ -129,19 +129,19 @@
               <small>
                 <span id='year-selected-start'>1975</span>
                 -
-                <span id='year-selected-end'>2018</span>
+                <span id='year-selected-end'>2019</span>
               </small>
             </h4>
             <div id='year-slider'></div>
             <span class='pull-left'>1975</span>
-            <span class='pull-right'>2018</span>
+            <span class='pull-right'>2019</span>
 
             <br/>
             <div id='construction-checkbox'>
                 <label class='checkbox inline'>
-                  <input type='checkbox' id='cbConstruction' />              
+                  <input type='checkbox' id='cbConstruction' />
                   Show projects in construction
-                </label>            
+                </label>
             </div>
 
             <h4>
@@ -212,10 +212,10 @@
 
         </div>
         </div>
-          
+
         </div>
       </div>
-        
+
       <div style='z-index: 0; position:absolute; width:100%;'>
         <noscript>
           <div class='alert alert-info'>
@@ -223,7 +223,7 @@
             <p>Please enable JavaScript to view the map.</p>
           </div>
         </noscript>
-      </div>  
+      </div>
     </div>
 
     <div id='map_canvas' ></div>
@@ -236,16 +236,16 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
     <script src="js/moment.min.js"></script>
-    
+
     <script type='text/javascript'>
       //<![CDATA[
         $(window).resize(function () {
           var h = $(window).height(),
             offsetTop = 0; // Calculate the top offset
-        
+
           $('#map_canvas').css('height', (h - offsetTop));
         }).resize();
-        
+
         $(function() {
           var myMap = new MapsLib({
             fusionTableId:      "17KstmrgqgC0uogcPkYIA4zk9Hw0xq66StZiMKi0p",
@@ -258,7 +258,7 @@
           });
 
           var autocomplete = new google.maps.places.Autocomplete(document.getElementById('search_address'));
-      
+
           $(':checkbox').click(function(){
             myMap.doSearch();
           });
@@ -266,25 +266,25 @@
           $(':radio').click(function(){
             myMap.doSearch();
           });
-          
+
           $('#search_radius').change(function(){
             myMap.doSearch();
           });
-          
+
           $('#search').click(function(){
             myMap.doSearch();
           });
-          
+
           $('#find_me').click(function(){
-            myMap.findMe(); 
+            myMap.findMe();
             return false;
           });
-          
+
           $('#reset').click(function(){
-            myMap.reset(); 
+            myMap.reset();
             return false;
           });
-          
+
           $(":text").keydown(function(e){
               var key =  e.keyCode ? e.keyCode : e.which;
               if(key === 13) {
