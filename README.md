@@ -1,4 +1,6 @@
-# ORC World Map
+# ORC World Map - ARCHIVED
+
+**This project has been replaced by [https://github.com/tartieret/ORC-World-Map-SPA](https://github.com/tartieret/ORC-World-Map-SPA)**
 
 The Organic Rankine Cycle (ORC) technology is a way to convert heat into electricity. Its main applications are distributed electricity generation from renewable heat sources (geothermal, biomass, solar) and industrial energy efficiency (heat recovery from industrial processes). The ORC technology is not very well-known and the number of power plants that are based on that technology is underestimated. Combining all the known references onto one map could increase public awareness and motivate new motions and incentives favorable to ORC.
 
